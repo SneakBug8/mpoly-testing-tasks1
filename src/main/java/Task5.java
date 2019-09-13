@@ -10,6 +10,10 @@ public class Task5 {
         print("Введите количество элементов");
         int number = scanner.nextInt();
 
+        if (number < 0) {
+            throw new Error("Неправильный размер массива");
+        }
+
         array = new int[number];
 
         Random rand = new Random();

@@ -10,7 +10,7 @@ public class Task2 extends Task1 {
             print("Количество домов:");
             int housescount = scanner.nextInt();
 
-            if (housescount == 0) {
+            if (housescount <= 0) {
                 throw new Error("Неверное количество домов");
             }
 

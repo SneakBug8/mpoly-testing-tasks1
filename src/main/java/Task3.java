@@ -19,7 +19,10 @@ public class Task3 extends Task2 {
             print("Второй дом");
             int secondhouse = checkmaxhouse(scanner.nextInt(), housescount);
 
-            if (secondhouse > firsthouse) {
+            double firstpath = pathfromcenter(firsthouse);
+            double secondpath = pathfromcenter(secondhouse);
+
+            if (firstpath < secondpath) {
                 int thouse = secondhouse;
                 secondhouse = firsthouse;
                 firsthouse = thouse;

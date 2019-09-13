@@ -9,7 +9,7 @@ class Task4 extends Task3 {
         print("Количество домов:");
         int housescount = scanner.nextInt();
 
-        if (housescount == 0) {
+        if (housescount <= 0) {
             throw new Error("Неверное количество домов");
         }
 
@@ -17,6 +17,10 @@ class Task4 extends Task3 {
         List<Integer> houses = new ArrayList<Integer>();
         while (true) {
             int res = scanner.nextInt();
+
+            if (res > housescount) {
+                throw new Error("Неправильный номер дома");
+            }
 
             if (res != 0) {
             houses.add(res);
@@ -43,6 +47,9 @@ class Task4 extends Task3 {
 
             houses.remove((Object) target);
         }
+
+        total += path(position, getposition(housescount), lane, 0.5);
+        print("Идём в конец улицы (путь: " + total + ")");
 
         print(Double.toString(total));
 
